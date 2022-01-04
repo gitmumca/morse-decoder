@@ -37,9 +37,10 @@ const MORSE_TABLE = {
     '-----':  '0',
 };
 
+
 function decode(expr) {
 	return expr.match(/.{1,10}/g).map((el) => el.match(/.{1,2}/g).map((el) => el=='00'?'':(el=='10')?'.':(el=='11')?'-':'*').join(''))
-								 .map((el) => (el=='*****') ? ' ' : MORSE_TABLE[el]).join('');
+							        .map((el) => (el=='*****') ? ' ' : MORSE_TABLE[el]).join('');
 }
 
 module.exports = {
